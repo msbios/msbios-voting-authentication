@@ -7,8 +7,8 @@ namespace MSBios\Voting\Authentication\Factory;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Voting\Authentication\Exception\ResolverServiceNotFoundException;
-use MSBios\Voting\Authentication\IdentityResolver;
-use MSBios\Voting\Authentication\IdentityResolverInterface;
+use MSBios\Voting\Authentication\VoteResolver;
+use MSBios\Voting\Authentication\VoteResolverInterface;
 use MSBios\Voting\Authentication\Module;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -22,12 +22,12 @@ class IdentityResolverFactory implements FactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return IdentityResolver|IdentityResolverInterface
+     * @return VoteResolver|VoteResolverInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        /** @var IdentityResolverInterface $identityResolver */
-        $identityResolver = new IdentityResolver;
+        /** @var VoteResolverInterface $identityResolver */
+        $identityResolver = new VoteResolver;
 
         /** @var array $options */
         $options = $container->get(Module::class);

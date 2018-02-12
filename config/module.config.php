@@ -13,21 +13,21 @@ return [
         'factories' => [
             Module::class =>
                 Factory\ModuleFactory::class,
-            IdentityResolver::class =>
+            VoteResolver::class =>
                 Factory\IdentityResolverFactory::class
         ]
     ],
 
     Module::class => [
 
-        /**
-         *
-         * Expects: array
-         * Default: [
-         *     Resolver\VoteRepositoryResolver::class => -100
-         * ]
-         */
-        'identity_resolvers' => [
-        ],
+        // /**
+        //  *
+        //  * Expects: array
+        //  * Default: [
+        //  *     Resolver\VoteRepositoryResolver::class => -100
+        //  * ]
+        //  */
+        // 'identity_resolvers' => [
+        // ],
     ]
 ];

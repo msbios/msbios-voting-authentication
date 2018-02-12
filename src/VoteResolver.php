@@ -5,18 +5,18 @@
  */
 namespace MSBios\Voting\Authentication;
 
-use MSBios\Voting\Authentication\Resolver\IdentityInterface;
+use MSBios\Voting\Authentication\Resolver\VoteInterface;
 use MSBios\Voting\Resource\Record\PollInterface;
 use Zend\Stdlib\PriorityQueue;
 
 /**
- * Class IdentityResolver
+ * Class VoteResolver
  * @package MSBios\Voting\Authentication
  */
-class IdentityResolver implements IdentityResolverInterface
+class VoteResolver implements VoteResolverInterface
 {
     /**
-     * @var PriorityQueue|IdentityInterface[]
+     * @var PriorityQueue|VoteInterface[]
      */
     protected $queue;
 
@@ -37,7 +37,7 @@ class IdentityResolver implements IdentityResolverInterface
     public function find(PollInterface $poll)
     {
         if (count($this->queue)) {
-            /** @var IdentityInterface $resolver */
+            /** @var VoteInterface $resolver */
             foreach ($this->queue as $resolver) {
                 if ($resource = $resolver->find($poll)) {
                     return $resource;
@@ -47,11 +47,11 @@ class IdentityResolver implements IdentityResolverInterface
     }
 
     /**
-     * @param IdentityInterface $resolver
+     * @param VoteInterface $resolver
      * @param int $priority
      * @return $this
      */
-    public function attach(IdentityInterface $resolver, $priority = 1)
+    public function attach(VoteInterface $resolver, $priority = 1)
     {
         $this->queue->insert($resolver, $priority);
         return $this;

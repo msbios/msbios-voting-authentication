@@ -5,18 +5,18 @@
  */
 namespace MSBios\Voting\Authentication;
 
-use MSBios\Voting\Authentication\Resolver\IdentityInterface;
+use MSBios\Voting\Authentication\Resolver\VoteInterface;
 
 /**
  * Interface IdentityResolverInterface
  * @package MSBios\Voting\Authentication
  */
-interface IdentityResolverInterface extends IdentityInterface
+interface VoteResolverInterface extends VoteInterface
 {
     /**
-     * @param IdentityInterface $resolver
+     * @param VoteInterface $resolver
      * @param int $priority
      * @return mixed
      */
-    public function attach(IdentityInterface $resolver, $priority = 1);
+    public function attach(VoteInterface $resolver, $priority = 1);
 }

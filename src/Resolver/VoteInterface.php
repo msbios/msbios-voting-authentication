@@ -8,10 +8,10 @@ namespace MSBios\Voting\Authentication\Resolver;
 use MSBios\Voting\Resource\Record\PollInterface;
 
 /**
- * Interface IdentityInterface
+ * Interface VoteInterface
  * @package MSBios\Voting\Authentication\Resolver
  */
-interface IdentityInterface
+interface VoteInterface
 {
     /**
      * @param PollInterface $poll
