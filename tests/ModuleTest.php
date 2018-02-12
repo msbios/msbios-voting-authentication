@@ -3,14 +3,14 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBiosTest\Voting\Doctrine;
+namespace MSBiosTest\Voting\Authentication;
 
-use MSBios\Voting\Doctrine\Module;
+use MSBios\Voting\Authentication\Module;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class ModuleTest
- * @package MSBiosTest\Voting\Doctrine
+ * @package MSBiosTest\Voting\Authentication
  */
 class ModuleTest extends TestCase
 {
